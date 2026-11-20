@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fytur — operating discipline for small cross-border commerce</title>
+<meta name="description" content="fytur is an operating system for small cross-border commerce: written process, measured time and gated capital, packaged for the operators and sellers who have never had access to it.">
+<style>
+:root{
+  --bg:#faf9f6;--panel:#fff;--ink:#17191a;--muted:#5f6563;--line:#e4e2dc;--soft:#f1efe9;
+  --accent:#2f4f4a;
+  --s1:#a4522e;--s2:#8a6a14;--s3:#2f6b45;--s4:#2f4f4a;--s5:#3b4c77;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:ui-serif,Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121413;--panel:#1a1d1b;--ink:#eceae4;--muted:#9aa09b;--line:#2a2f2c;--soft:#1f2320;
+  --accent:#8fc2b6;
+  --s1:#d98a5f;--s2:#c9a64a;--s3:#6fb088;--s4:#7fb3a4;--s5:#8290c4;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 28px}
+header{padding:38px 0 0}
+.brand{display:flex;align-items:center;gap:13px}
+.brand svg{display:block}
+.brand .wm{font-family:var(--serif);font-size:25px;letter-spacing:-.025em;line-height:1}
+.brand .tag{font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(31px,5.4vw,46px);line-height:1.14;letter-spacing:-.025em;margin:62px 0 0}
+.lede{font-size:18.5px;line-height:1.55;color:var(--muted);margin:22px 0 0;max-width:38em}
+section{padding:58px 0 0}
+h2{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 20px}
+h3{font-family:var(--serif);font-weight:500;font-size:25px;letter-spacing:-.015em;margin:0 0 14px;line-height:1.25}
+p{margin:0 0 17px;max-width:38em}
+p:last-child{margin-bottom:0}
+.rule{height:1px;background:var(--line);margin:58px 0 0}
+.row{display:flex;gap:16px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.dot{flex:0 0 30px;width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:14px;font-weight:700;color:var(--bg)}
+.row .t{flex:1;min-width:0}
+.row .n{font-weight:650;font-size:16px;letter-spacing:-.01em}
+.row .d{color:var(--muted);font-size:15px;margin-top:3px;line-height:1.5}
+.num{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.num:last-child{border-bottom:0}
+.num i{font-style:normal;font-family:var(--mono);font-size:13px;color:var(--muted);flex:0 0 20px;padding-top:3px}
+.num b{font-weight:650;letter-spacing:-.01em}
+.num .d{color:var(--muted);font-size:15px;margin-top:3px;line-height:1.5}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.three .k{font-weight:650;margin-bottom:5px;letter-spacing:-.01em}
+.three .v{color:var(--muted);font-size:15px;line-height:1.5}
+.status{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:24px 26px}
+.status p{font-size:15.5px}
+.status .mark{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:11px}
+footer{margin-top:62px;padding:26px 0 52px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;
+  text-decoration-color:var(--line)}
+a:hover{text-decoration-color:currentColor}
+.resp{font-family:var(--serif);font-size:19px;letter-spacing:-.01em;color:var(--ink)}
+@media(max-width:620px){
+  .three{grid-template-columns:1fr;gap:18px}
+  .wrap{padding:0 20px}
+  h1{margin-top:46px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <svg viewBox="0 0 140 110" width="44" height="35" role="img" aria-label="fytur">
+      <rect x="4" y="68" width="22" height="34" fill="var(--s1)"></rect>
+      <rect x="31" y="54" width="22" height="48" fill="var(--s2)"></rect>
+      <rect x="58" y="40" width="22" height="62" fill="var(--s3)"></rect>
+      <rect x="85" y="24" width="22" height="78" fill="var(--s4)"></rect>
+      <rect x="112" y="6" width="22" height="96" fill="var(--s5)"></rect>
+    </svg>
+    <div>
+      <div class="wm">fytur</div>
+      <div class="tag">Operating discipline</div>
+    </div>
+  </div>
+
+  <h1>The operating discipline large companies run on, packaged for everyone else.</h1>
+  <p class="lede">fytur is an operating system for small cross-border commerce: written process,
+  measured time and gated capital — the machinery that makes trade repeatable instead of lucky.</p>
+</header>
+
+<div class="rule"></div>
+
+<section>
+  <h2>The gap</h2>
+  <p>Large companies run on control towers, landed-cost models, governance gates and written
+  procedures. A one-person operator in Manila or a small seller in Jakarta has none of it — not
+  because it is expensive to run, but because nobody has packaged it for them.</p>
+  <p>That is the whole of it. The discipline is not a secret and it is not costly. It has simply
+  never been built for the people who need it most.</p>
+  <p class="resp">fytur is future, respelled.</p>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>The method</h2>
+  <div class="row"><div class="dot" style="background:var(--s1)">F</div><div class="t">
+    <div class="n">Find</div>
+    <div class="d">Find demand before buying stock. Evidence from the platform itself, never an estimate.</div></div></div>
+  <div class="row"><div class="dot" style="background:var(--s2)">Y</div><div class="t">
+    <div class="n">Yield</div>
+    <div class="d">Prove the unit yields margin on fees actually deducted, not published rates.</div></div></div>
+  <div class="row"><div class="dot" style="background:var(--s3)">T</div><div class="t">
+    <div class="n">Test</div>
+    <div class="d">Test small, with money you can afford to lose, against a gate set in advance.</div></div></div>
+  <div class="row"><div class="dot" style="background:var(--s4)">U</div><div class="t">
+    <div class="n">Understand</div>
+    <div class="d">Measure what it took: time per task, landed cost, days to cash.</div></div></div>
+  <div class="row"><div class="dot" style="background:var(--s5)">R</div><div class="t">
+    <div class="n">Repeat</div>
+    <div class="d">Write it down so that someone else can run it.</div></div></div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Who it is for</h2>
+  <div class="three">
+    <div><div class="k">Operators</div><div class="v">The people who run a venture day to day using the method.</div></div>
+    <div><div class="k">Sellers</div><div class="v">Small businesses who want the discipline without having to build it.</div></div>
+    <div><div class="k">Suppliers</div><div class="v">Who deal with a counterparty that measures things properly.</div></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>What fytur will never do</h2>
+  <p>The method is what fytur does for you. These are what it does to itself. A platform preaching
+  operating discipline is believed only if it visibly submits to it.</p>
+  <div class="num"><i>1</i><div><b>Never build anything that depends on one person.</b>
+    <div class="d">If it cannot be handed to an operator with a document, it is not a venture. It is a job.</div></div></div>
+  <div class="num"><i>2</i><div><b>Never scale anything that is not written down.</b>
+    <div class="d">The SOP comes before the second unit, always — hardest to keep at the moment something starts working.</div></div></div>
+  <div class="num"><i>3</i><div><b>Never sell a method fytur has not run itself.</b>
+    <div class="d">Discipline cannot be sold on the strength of a corporate career. It is earned by running a venture under the same gates and publishing the numbers, failures included.</div></div></div>
+  <div class="num"><i>4</i><div><b>Never take the saving as spread.</b>
+    <div class="d">Where volume produces a discount, it goes to the buyer rather than into the margin.</div></div></div>
+  <div class="num"><i>5</i><div><b>Never trade where a conflict exists.</b>
+    <div class="d">Categories that would put fytur across the table from anyone it is accountable to are excluded on sight.</div></div></div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Where it stands</h2>
+  <div class="status">
+    <div class="mark">Status · November 2026</div>
+    <p>fytur is being built by running its own method on itself. The first venture is a small,
+    capital-gated test in Singapore, released in tranches against criteria written before the money
+    moved, with a date on which it stops whether or not it is working.</p>
+    <p>There is nothing to buy yet. Refusal three means the method is not sold until it has been
+    run, and the numbers — including the failures — are published when it has.</p>
+  </div>
+</section>
+
+<footer>
+  <div>&copy; 2026 fytur</div>
+  <div>Singapore</div>
+</footer>
+
+</div>
+</body>
+</html>
